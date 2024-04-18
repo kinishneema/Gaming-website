@@ -1,42 +1,38 @@
-let bagitems;
-onload()
+let bagItems;
+onLoad();
 
-
-function onload(){
-let bagitemsstr=localStorage.getItem('bagitems')
-bagitems=bagitemsstr ? JSON.parse(bagitemsstr) : [];
-displayitemsonhomepage();
-displaybagicon()
+function onLoad() {
+  let bagItemsStr = localStorage.getItem("bagItems");
+  bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
+  displayItemsOnHomePage();
+  displayBagIcon();
 }
 
-function addtobag(itemId){
-bagitems.push(itemId)
-localStorage.setItem('bagitems',JSON.stringify(bagitems))
-displaybagicon()
+function addToBag(itemId) {
+  bagItems.push(itemId);
+  localStorage.setItem("bagItems", JSON.stringify(bagItems));
+  displayBagIcon();
 }
 
-function displaybagicon(){
-    let bagitemcountelement=document.querySelector('.bag-item-count')
-    if(bagitems.length>0){
-    bagitemcountelement.style.visibility='visible';
-    bagitemcountelement.innerHTML=bagitems.length
-    }
-    else{
-        bagitemcountelement.style.visibility='hidden';
-    }
+function displayBagIcon() {
+  let bagItemCountElement = document.querySelector(".bag-item-count");
+  if (bagItems.length > 0) {
+    bagItemCountElement.style.visibility = "visible";
+    bagItemCountElement.innerHTML = bagItems.length;
+  } else {
+    bagItemCountElement.style.visibility = "hidden";
+  }
 }
 
+function displayItemsOnHomePage() {
+  let itemsContainerElement = document.querySelector(".items-container");
+  if (!itemsContainerElement) {
+    return;
+  }
 
-
-function displayitemsonhomepage(){
-    let itemscontainerelement=document.querySelector(".items-container");
-if(!itemscontainerelement ){
-    return
-}
-
-let innerHTML=' ';
-items.forEach(item=>{
-  innerHTML += `
+  let innerHTML = "";
+  items.forEach((item) => {
+    innerHTML += `
   <div class="item-container">
       <img  class="item-image" src="${item.item_image}" alt="item image">
       <div class="rating">
@@ -50,10 +46,8 @@ items.forEach(item=>{
           <span class="discount">(${item.discount_percentage}% off)</span>
       </div>
 
-          <button class="btn-add-bag" onclick="addtobag(${item.id})">Add To Bag</button>
-  </div>
-  `
-})
-itemscontainerelement.innerHTML= innerHTML;
-
+          <button class="btn-add-bag" onclick="addToBag(${item.id})">Add To Bag</button>
+  </div>`;
+  });
+  itemsContainerElement.innerHTML = innerHTML;
 }
