@@ -23,7 +23,7 @@ const items = [
       noOFReviews: 1128,
     },
     company_name: "Made in india",
-    item_name: "Jenga Wood Block Game Jenga",
+    item_name: "Jenga Wood Block Game",
     current_price: 1395,
     original_price: 1499,
     discount_percentage: 24,
