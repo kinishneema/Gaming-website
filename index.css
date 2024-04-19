@@ -16,6 +16,9 @@ header {
 .myntra_home {
   height: 60px;
 }
+.wishlist {
+  text-decoration: none;
+}
 .logo_container {
   margin-left: 2%;
 }

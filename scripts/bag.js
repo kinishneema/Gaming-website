@@ -18,8 +18,14 @@ function displayBagSummary() {
     totalMRP += bagItem.original_price;
     totalDiscount += bagItem.original_price - bagItem.current_price;
   });
+  //let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
 
-  let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
+  let finalPayment;
+  if (totalMRP == 0) {
+    finalPayment = 0;
+  } else {
+    finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
+  }
 
   bagSummaryElement.innerHTML = `
   <div class="bag-details-container">
@@ -34,7 +40,7 @@ function displayBagSummary() {
     </div>
     <div class="price-item">
       <span class="price-item-tag">Convenience Fee</span>
-      <span class="price-item-value">-₹${CONVENIENCE_FEES}</span>
+      <span class="price-item-value">₹${CONVENIENCE_FEES}</span>
     </div>
     <hr>
     <div class="price-footer">
