@@ -3,13 +3,13 @@ const items = [
     id: "001",
     item_image: "../items-images/1.jpg",
     rating: {
-      star: 4.5,
-      noOFReviews: 1500,
+      star: 4.7,
+      noOFReviews: 1230,
     },
     company_name: "Made in india",
-    item_name: "Ram mandir 3-D Model",
-    current_price: 1001,
-    original_price: 2045,
+    item_name: "Simon Game",
+    current_price: 2031,
+    original_price: 2500,
     discount_percentage: 40,
     return_period: 14,
     delivery_date: "10 oct 2023",
@@ -17,7 +17,7 @@ const items = [
 
   {
     id: "002",
-    item_image: "../items-images/1.jpg",
+    item_image: "../items-images/2.jpg",
     rating: {
       star: 4.5,
       noOFReviews: 1500,
@@ -33,7 +33,7 @@ const items = [
 
   {
     id: "003",
-    item_image: "../items-images/1.jpg",
+    item_image: "../items-images/3.jpg",
     rating: {
       star: 4.5,
       noOFReviews: 1500,

@@ -222,6 +222,9 @@ header {
   border-radius: 10px;
   cursor: pointer;
 }
+.btn-add-bag:hover {
+  background-color: green;
+}
 .bag-item-count {
   background-color: #f16565;
   white-space: nowrap;
