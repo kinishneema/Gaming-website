@@ -1,2 +1,3 @@
-#this is the shopping website
-#this whole project is under contruction
+# this is the shopping website
+
+this whole project is under contruction
